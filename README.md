@@ -65,13 +65,13 @@ La aplicación puede hacaer lo siguiente:
 ● 1 Api en Express con comunicación a la base de datos
   - Se tienen los siguientes Endpoints:
 
-`/devices` : Devuelve una lista de todos los dispositivos en la tabla Dispositivos
-`/devices/:id`: Devuelve información de un solo dispositivo
-`/lastmeasurement/:id` : Devuelve la ultima medición de un dispositivo
-`/measurements/:id` : Devuelve todas las mediciones de un dispositivo
-`/waterlog/:id` : Devuelve todos los registros de riego de una electroválvula en particular
-`/changestate` :  Cambia estado de la válvula y lo registra en la tabla Log_Riegos
-`/updatemeasurements` : Inserta un registro en la tabla Mediciones
+    * `/devices` : Devuelve una lista de todos los dispositivos en la tabla Dispositivos
+    * `/devices/:id`: Devuelve información de un solo dispositivo
+    * `/lastmeasurement/:id` : Devuelve la ultima medición de un dispositivo
+    * `/measurements/:id` : Devuelve todas las mediciones de un dispositivo
+    * `/waterlog/:id` : Devuelve todos los registros de riego de una electroválvula en particular
+    * `/changestate` :  Cambia estado de la válvula y lo registra en la tabla Log_Riegos
+    * `/updatemeasurements` : Inserta un registro en la tabla Mediciones
 
 
 
