@@ -4,7 +4,7 @@
       Home - Dispositivos
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="getUpdatedDevices()">Refrescar Lista de Dispositivos</ion-button>
+      <ion-button appColorBoton (click)="getUpdatedDevices()">Refrescar Lista de Dispositivos</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -22,7 +22,7 @@
         <ion-toolbar>
           <ion-title>{{ dispositivo.nombre }}</ion-title>
           <ion-buttons slot="end">
-            <ion-button routerLink="/dispositivo/{{dispositivo.dispositivoId}}">Ver detalles</ion-button>
+            <ion-button appColorBoton routerLink="/dispositivo/{{dispositivo.dispositivoId}}">Ver detalles</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-card-header>

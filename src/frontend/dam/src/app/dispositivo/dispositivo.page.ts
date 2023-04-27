@@ -41,7 +41,7 @@ export class DispositivoPage implements OnInit {
         this.getMedicionLog();
         setTimeout(()=>{
             this.valorObtenido = parseFloat(this.mediciones[0].valor)
-            console.log("Medicion Inicial");
+            console.log("Medicion Inicial ", this.valorObtenido);
             this.refreshChart();
           },3000);
     }
@@ -62,7 +62,7 @@ export class DispositivoPage implements OnInit {
         this.intervalo = setInterval(() => {
             this.getMedicionSensor();
             this.refreshChart();
-            }, 5000);
+            }, 15000);
 
     }
 
@@ -173,12 +173,10 @@ export class DispositivoPage implements OnInit {
 
     // Obtiene la última medición en el sensor (o simulación)
     getMedicionSensor () {
-        this.getMedicionLog();
-        console.log("Sensor simulado")
-        console.log(this.valorObtenido)
-        this.valorObtenido = parseFloat(this.mediciones[0].valor)
-        this.valorObtenido = this.valorObtenido + 1
-        console.log("Nuevo valor: ", this.valorObtenido)
+        //this.getMedicionLog();
+        console.log("Sensor simulado ", this.valorObtenido);
+        this.valorObtenido = this.valorObtenido + 1;
+        console.log("Nuevo valor: ", this.valorObtenido);
         this._DispositivoService.logUltimaMedicion(parseInt(this.dispositivoId), this.valorObtenido);
         return this.valorObtenido;
     }
@@ -187,7 +185,8 @@ export class DispositivoPage implements OnInit {
         this.aperturaValvula = 1;
         console.log("Válvula abierta");
         this._DispositivoService.logAccionarValvula(parseInt(this.dispositivoId), this.aperturaValvula);
-        
+        this.valorObtenido = 0;
+        this.mediciones[0].valor = 0;
         this.valvulaAbierta = true;
     }
 
