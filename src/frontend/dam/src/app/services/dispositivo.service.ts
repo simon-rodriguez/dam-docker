@@ -38,9 +38,13 @@ export class DispositivoService {
 
   // Insertar accion de electroválvula en el registro
   logAccionarValvula(deviceid:number, aperturaValvula:number) {
+    const fechaActual = new Date()
+    const soloFecha = fechaActual.toISOString().split('T')[0];
+    const soloHora = fechaActual.toISOString().split('T')[1].split('.')[0];
+    const fechaFormateada = `${soloFecha} ${soloHora}`
     let body = {
       apertura: aperturaValvula,
-      fecha: (new Date()).toISOString().split('T')[0],
+      fecha: fechaFormateada,
       electrovalvulaId: deviceid
     }
       this._http.post(`${this.uri}/changestate`, body).subscribe((res) => {
@@ -51,8 +55,12 @@ export class DispositivoService {
 
   // Insertar última medición en el registro
   logUltimaMedicion(deviceid:number, valorMedicion: number) {
+    const fechaActual = new Date()
+    const soloFecha = fechaActual.toISOString().split('T')[0];
+    const soloHora = fechaActual.toISOString().split('T')[1].split('.')[0];
+    const fechaFormateada = `${soloFecha} ${soloHora}`
     let body = {
-      fecha: (new Date()).toISOString().split('T')[0],
+      fecha: fechaFormateada,
       valor: valorMedicion,
       dispositivoId: deviceid
     }

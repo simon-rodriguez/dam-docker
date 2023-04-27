@@ -15,6 +15,11 @@ CEIoT - TP Final - Desarrollo de Aplicaciones Multiplataforma
 
 # Características de la WebApp:
 
+**Diagrama de la Base de Datos**
+
+![Diagrama BD](img/diagrama_bd.jpg)
+
+
 La aplicación puede hacaer lo siguiente:
 1. Dar un listado de dispositivos.
 
@@ -42,7 +47,6 @@ La aplicación puede hacaer lo siguiente:
 3. Al abrir la válvula, el valor del sensor va a '0', simulando que el suelo se riega inmediatamente; sin embargo, este valor no se guarda en la tabla de mediciones hasta que se cierre la válvula (o se vuelva a obtener una lectura del sensor o simulación).
 
 
-
 # Otras consideraciones de la app:
 
 ● 2 Directivas estructurales (ngIf, ngFor)
@@ -61,13 +65,13 @@ La aplicación puede hacaer lo siguiente:
 ● 1 Api en Express con comunicación a la base de datos
   - Se tienen los siguientes Endpoints:
 
-    /devices
-    /devices/:id
-    /lastmeasurement/:id
-    /measurements/:id
-    /waterlog/:id
-    /changestate
-    /updatemeasurements
+`/devices` : Devuelve una lista de todos los dispositivos en la tabla Dispositivos
+`/devices/:id`: Devuelve información de un solo dispositivo
+`/lastmeasurement/:id` : Devuelve la ultima medición de un dispositivo
+`/measurements/:id` : Devuelve todas las mediciones de un dispositivo
+`/waterlog/:id` : Devuelve todos los registros de riego de una electroválvula en particular
+`/changestate` :  Cambia estado de la válvula y lo registra en la tabla Log_Riegos
+`/updatemeasurements` : Inserta un registro en la tabla Mediciones
 
 
 

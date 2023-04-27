@@ -48,6 +48,7 @@ app.get('/', function(req, res, next) {
     res.send({'mensaje': 'Bienvenidos a DAM'}).status(200);
 });
 
+// Devuelve una lista de todos los dispositivos en la tabla Dispositivos
 app.get('/devices', auth, function(req, res, next) {
     pool.query('Select * from Dispositivos', function(err, result, fields) {
         if (err) {
